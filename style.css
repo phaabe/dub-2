@@ -1,0 +1,96 @@
+#all
+{
+font-size: 18;
+font-family:Lekton,Times New Roman,sans-serif;
+font-weight:500;
+}
+
+#download a
+{
+color: black;
+font-size: 16;
+text-align: right;
+}
+
+p
+{
+margin: 6px;
+padding: 6px;
+}
+
+#head
+{
+color: black;
+font-size:2em;
+font-weight: 900;
+text-decoration:none;
+}
+
+
+#under_head
+{
+font-size:20;
+font-weight: 450;
+}
+
+#under_under_head
+{
+    font-size:13;
+    font-weight: 200;
+}
+
+#titles h1
+{
+font-size: 30;
+text-decoration: none;
+font-weight: bold;
+}
+
+#fooder
+{
+color: silver;
+font-size:15;
+}
+
+/*   navi  */
+
+#navi ul
+{
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+#navi li
+{
+margin: 0 0 .2em 0;
+}
+#navi a
+{
+font-size: 20;
+display: block;
+color: black;
+background-color: #d3d3d3;
+width: 170px;
+/* height: 50px; */
+padding: .2em .8em;
+text-decoration: none;
+}
+
+#navi a:hover
+{
+background-color: #9e9e9e;
+background-image: url('hover.jpg');
+color: #FFF;
+text-decoration:overline underline;
+}
+
+.content-section {
+  display: none;
+}
+
+#home {
+  display: block;
+}
+
+/*   navi ende  */
