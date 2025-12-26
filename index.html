@@ -9,15 +9,19 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const sections = document.querySelectorAll('.content-section');
-      document.querySelectorAll('#navi a').forEach(link => {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          const targetId = this.getAttribute('href');
-          sections.forEach(section => {
-            section.style.display = 'none'; // Make other sections invisible
+      // Handle all links that point to content sections
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        const targetId = link.getAttribute('href');
+        // Only handle links that point to content sections
+        if (document.querySelector(targetId + '.content-section')) {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            sections.forEach(section => {
+              section.style.display = 'none'; // Make other sections invisible
+            });
+            document.querySelector(targetId).style.display = 'block'; // Show the target section
           });
-          document.querySelector(targetId).style.display = 'block'; // Show the target section
-        });
+        }
       });
     });
   </script>
@@ -46,9 +50,6 @@
 			  <span id="under_under_head">Humanwissenschaftliche Fakultät Universität&nbsp;Potsdam</span>
                         </td>
                         <td width="25%" align="right">
-                          <!--
-                          <a href="dr-ulrike-becker.php?inklusive_paedagogik=foto-quelle.php"><img height="140px" width="140px" src="dr-ulrike-becker2.jpg"></a>
-                          -->
                         </td>
                       </tr>
                     </tbody>
@@ -68,6 +69,8 @@
                   <div id="navi">
                     <ul>
                       <li><a href="#home">Kontakt</a>
+                      </li>
+		      <li><a href="#book" style="">Buch <sup><strong>neu</strong></sup></a>
                       </li>
                       <li><a href="#werdegang">Werdegang</a>
                       </li>
@@ -127,26 +130,41 @@
 			  </tr>
                         </tbody>
                       </table>
-                      <p>
-                      </p>
-			<!--                    <h3>Aktuelle Publikationen</h3> -->
-			<!--                    <ul> -->
-			<!--       <li>Managing Challenging Behaviour in Schools (2025). <a href="https://shop.budrich.de/produkt/managing-challenging-behaviour-in-schools/">Verlag Barbara Budrich</a>. or  -->
-			<!-- 	      <a href="https://cup.columbia.edu/book/managing-challenging-behaviour-in-schools/9783847431077/">Columbia University Press</a> -->
-			<!--                      </li> -->
-			<!--                      <li>Ulrike Becker & Bettina Streese (2024): Pädagogische Beziehungsarbeit in der Schule - Basis für gelingende Lernprozesse. In: Fördermagazin Sekundarstufe, 3/2024, 2-9. -->
-			<!--                      </li> -->
-			<!--                      <li>Auffälliges Verhalten in der Schule — -->
-			<!--                        Pädagogisches Verstehen und Handeln <a -->
-			<!--                          href="https://shop.budrich.de/produkt/auffaelliges-verhalten-in-der-schule/">bestellen</a> -->
-			<!--                      </li> -->
-			<!--                      <li><a -->
-			<!--                          href="https://www.pedocs.de/volltexte/2022/24886/pdf/Becker_2022_Multiprofessionelle_Kooperation.pdf">Multiprofessionelle -->
-			<!--                          Kooperation im Kontext inklusive Bildung</a></li> -->
-			<!-- <li>Ulrike Becker& Helga Breuninger (2024): „Cuts" zur Deeskalation von Konflikten in der Schule. Lehren und Lernen 50, 2024, 1, 10-14 <a href="https://www.pedocs.de/volltexte/2025/32073/pdf/LuL_2024_1_Becker_Breuninger_Cuts_zur_Deeskalation.pdf">Volltext</a></li> -->
-			<!--                    </ul> -->
+		      <p>
+		      ➝ zum neuen <a href="#book">Buch</a>
+		      <!-- <sup><strong>neu</strong></sup> -->
                     </div>
                   </div>
+
+                  <!-- book -->
+                  <div id="book" class="content-section">
+                    <div
+                      style="vertical-align:middle;min-height:170px; width: 715px; border-left:2px solid black; border-right:2px solid black; margin:30px; padding:15px;">
+			    <h1 id="titles">Aktuelles Buch</h1>
+
+			                   <ul>
+			      <li>Managing Challenging Behaviour in Schools (2025). <a href="https://shop.budrich.de/produkt/managing-challenging-behaviour-in-schools/">Verlag Barbara Budrich</a>. or 
+				      <a href="https://cup.columbia.edu/book/managing-challenging-behaviour-in-schools/9783847431077/">Columbia University Press</a>
+			                     </li>
+			                     <li>Auffälliges Verhalten in der Schule —
+			                       Pädagogisches Verstehen und Handeln <a
+			                         href="https://shop.budrich.de/produkt/auffaelliges-verhalten-in-der-schule/">bestellen</a>
+			                     </li>
+			<li>Ulrike Becker & Helga Breuninger (2024): „Cuts" zur Deeskalation von Konflikten in der Schule. Lehren und Lernen 50, 2024, 1, 10-14 <a href="https://www.pedocs.de/volltexte/2025/32073/pdf/LuL_2024_1_Becker_Breuninger_Cuts_zur_Deeskalation.pdf">Volltext</a></li>
+			<li>Podcast zum Buch: <a href="https://budrich.de/news/auffaelliges-verhalten-podcast-ulrike-becker/">reinhören</a></li>
+			<li> <a href="https://www.uni-potsdam.de/de/nachrichten/detail/2025-12-17-die-groesste-herausforderung-der-inklusiven-schule-prof-ulrike-becker-ueber-den-umgang-mit-auffaelligem-verhalten">Interview Universität Potsdam</a>
+					   </ul>
+
+		      <table>
+		       <tr>
+			       <td><a href="https://shop.budrich.de/produkt/auffaelliges-verhalten-in-der-schule/"><img src="book-dr-ulrike-becker-de.jpg" style="margin: 10px;" width="40%"></a></td>
+			       <td><a href="https://cup.columbia.edu/book/managing-challenging-behaviour-in-schools/9783847431077/"><img src="book-dr-ulrike-becker-en.jpg" style="margin: 10px;" width="40%"></a></td>
+		       </tr>
+		      </table>
+
+                    </div>
+                  </div>
+
 
                   <!-- werdegang -->
                   <div id="werdegang" class="content-section">
